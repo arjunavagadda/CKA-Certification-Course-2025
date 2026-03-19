@@ -92,6 +92,24 @@ While both `CMD` and `ENTRYPOINT` define what commands should run in a container
 - **Restart a container**: `docker restart <container_id>`
 - **Delete a specific container**: `docker rm <container_id>`
 - **Delete all stopped containers**: `docker container prune`
+```sh
+root@controlplane:~$ docker image prune 
+WARNING! This will remove all dangling images.
+Are you sure you want to continue? [y/N] y
+Total reclaimed space: 0B
+```
+
+```sh
+root@controlplane:~$ docker rm -f $(docker ps -aq)
+4911544e2c5d
+```
+
+```sh
+docker container --help
+docker image --help
+docker image prune
+```
+
 
 ### **Image Management**
 - **Dangling images**: Images that are no longer tagged or associated with any container.
