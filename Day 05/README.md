@@ -125,6 +125,16 @@ When building Docker images, instructions like `FROM`, `RUN`, `COPY`, and `ADD` 
 | `FROM`, `RUN`, `COPY`, `ADD`            | `CMD`, `ENTRYPOINT`, `WORKDIR`, `EXPOSE`, `ENV`, `LABEL`, `USER`, `VOLUME`, `STOPSIGNAL`, `ARG`      |
 
 ---
+- COPY
+  - **Simple**, predictable
+  - Only copies local files/directories
+  - Recommended for most use cases
+
+- ADD
+  - Supports URL downloads
+  - Auto-extracts tar archives
+- Use **COPY** unless you specifically need ADD features (tar extraction or URL fetch)
+---
 
 ### **Best Practices**
 - Combine multiple commands into a single `RUN` instruction using `&&` to reduce the number of layers.  
