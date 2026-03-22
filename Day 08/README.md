@@ -14,6 +14,7 @@ If this **repository** helps you, give it a ⭐ to show your support and help ot
 
 - Documentation for [Kubectl Installation ](https://kubernetes.io/docs/tasks/tools/)
 - Documentation for [Kind Cluster Installation ](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- Vind - [Vind-kind Alternative](https://github.com/loft-sh/vind/tree/main)
 ---
 
 # What We Did
