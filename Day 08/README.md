@@ -26,6 +26,7 @@ We executed the command from the CLI to create Kubernetes clusters using **Kind*
   ```bash
   kind create cluster --name my-first-cluster --config kind-cluster.yaml
   ```
+
   Here is **kind-cluster.yaml**
 
 ```yaml
@@ -46,6 +47,11 @@ nodes:
   A **configuration file** was used to define the cluster setup, including:
   - **Image Version** 
   - **Number of Nodes**
+
+```bash
+kind create cluster --name kind-cluster --config kind-cluster.yml --kubeconfig kindconfig
+export KUBECONFIG=kindconfig
+```
   
 - Using configuration files is generally preferred because:
   - It allows **version control**, making it easier to track and roll back changes.
