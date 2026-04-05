@@ -318,6 +318,14 @@ The `imagePullPolicy` in Kubernetes specifies how the container runtime pulls co
   ```
   Here, Kubernetes will pull the `my-app:v1.2.3` image only if it’s not already on the node. If the image is present locally, it will use the cached version.
 
+- If two developers push a container image using the same tag, the latest push overwrites the previous image, which causes traceability and consistency issues. To avoid this, use **immutable tags, assign unique tags like Git commit SHA** or build numbers, enforce registry policies to prevent overwrites, and implement CI/CD checks and image signing to improve security and traceability.
+- ```myapp:<git-sha>```      ← immutable (production)
+- When you enforce registry policy, the registry ( ACR , ECR , any cloud image registry )will:
+Reject push if tag already exists
+Make tags immutable
+Allow only new unique tags
+Prevent accidental overwrite
+
 ---
 
 ### **3. Never**
